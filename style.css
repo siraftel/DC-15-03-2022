@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond&family=Nunito&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "EB Garamond", serif;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: aliceblue;
+}
+.box {
+  position: relative;
+  min-width: 400px;
+  padding: 20px;
+  background-color: skyblue;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 1);
+  gap: 30px;
+}
+.box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: calc(100% - 58px);
+  background-color: white;
+  height: 100%;
+}
+.box h3 {
+  position: relative;
+  color: black;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  padding-left: 90px;
+}
+.list {
+  display: flex;
+  padding: 10px;
+  position: relative;
+  cursor: pointer;
+}
+.list::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: skyblue;
+  transition: transform 0.5s;
+  transform: scaleX(0);
+  transform-origin: right;
+}
+.list:hover::before {
+  transition: transform 0.7s;
+  transform: scaleX(1);
+  transform-origin: left;
+  height: 75px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 1);
+}
+.imgbox {
+  position: relative;
+  min-width: 60px;
+  height: 75px;
+  overflow: hidden;
+  background-color: white;
+}
+.imgbox img {
+  border: 2px solid white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.content {
+  position: relative;
+  margin-left: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+.rank {
+  position: absolute;
+  right: 0;
+  color: white;
+  transition: 0.5s;
+  font-weight: 600;
+}
+small {
+  font-weight: 500;
+}
+.box .list .content h4 {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.box .list .content p {
+  font-weight: 590;
+}
+
+.box .list:hover .content h4,
+.box .list:hover .content p {
+  color: rgb(255, 255, 255);
+}
